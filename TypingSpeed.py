@@ -5,29 +5,22 @@ import sys
 import time
 import random
 
-class TypingSpeed:
-
-    def __init__(self):
-        self.w=1920
-        self.h=1080
 
 
-        pygame.init()
+WIDTH, HEIGHT = 900, 500
+WIN = pygame.display.set_mode((WIDTH,HEIGHT))
 
-        self.bg = pygame.image.load('screen1.png')
-        self.bg = pygame.transform.scale(self.bg, (500,750))
+def main():
 
+    run = True
 
-        self.screen = pygame.display.set_mode((self.w,self.h))
-        pygame.display.set_caption('Type Speed test')
-
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+    pygame.quit()
 
 
 
-    def run(self):
-        pygame.display.update()
-
-
-
-
-TypingSpeed().run()
+if __name__ == "__main__":
+    main()
