@@ -1,4 +1,5 @@
 #importing libraries
+from matplotlib.style import use
 import pygame as pg
 from pygame.locals import *
 import sys
@@ -71,6 +72,10 @@ def main():
                     if event.key ==pg.K_RETURN:
                         print(user_input)
                         user_input = ''
+                    elif event.key == pg.K_BACKSPACE:
+                        user_input = user_input[:-1]
+                    else:
+                        user_input += event.unicode
 
         
         
