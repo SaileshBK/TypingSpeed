@@ -19,27 +19,26 @@ pygame.init()
 
 
 def get_sentence():
+    #reading lines from text file
     with open("sentences.txt", "r") as file:
         text = file.read()
         text.strip('\n')
         return text
-    # f = open('sentences.txt').read()
-    # sentences = f.split('\n')
-    # sentence = random.choice(sentences)
-    # return sentence
+    
 
 def main():
     word = get_sentence()
-    #tmp_text = draw_text(word, 28, TEXT_C )
-
+    #initializing font
     font = pygame.font.SysFont(word, 60)
+    #rendering font 
     text = font.render(word, True,TEXT_C)
+    #posotioning the text from text file.
     text_rect = text.get_rect(topleft=(50,50))
-
+    #load image
     background_image = pygame.image.load("screen1.png")
     background_image = pygame.transform.scale(background_image,(WIDTH,HEIGHT))
 
-    #blit function takes the image variable and coordinates of the image
+    #blit function takes the image variable and coordinates of the image.
     WIN.blit(background_image,[0,0])
     WIN.blit(text, text_rect)
     
