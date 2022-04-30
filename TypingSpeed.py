@@ -44,7 +44,7 @@ def main():
     #pg.draw.rect(WIN,(255,192,25), (50,250,650,50), 2)
 
 
-    pg.draw.rect(WIN,(255,213,102), (50,250,650,50), 2)
+    input_box = pg.draw.rect(WIN,(255,213,102), (50,250,650,50), 2)
     # update the text of user input
     # self.draw_text(self.screen, self.input_text, 274, 26,(250,250,250))
     # pg.display.update()
@@ -53,11 +53,20 @@ def main():
 
     
     run = True
+    active = False
 
     while run:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 run = False
+
+            if event.type == pg.MOUSEBUTTONUP:
+                # in case user click the input box.
+                if input_box.collidepoint(event.pos):
+                    active = not active
+                else:
+                    active = False
+
         
         
         #updating display
