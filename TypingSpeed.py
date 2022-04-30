@@ -66,6 +66,11 @@ def main():
                     active = not active
                 else:
                     active = False
+            if event.type == pg.KEYDOWN:
+                if active:
+                    if event.key ==pg.K_RETURN:
+                        print(user_input)
+                        user_input = ''
 
         
         
