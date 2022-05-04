@@ -113,7 +113,7 @@ def main():
         
     #     #updating display
     
-        pg.display.update()
+        #pg.display.update()
     pg.quit()
 
 
